@@ -494,7 +494,7 @@
                <p class="text-white text-sm" style="margin-bottom: 0.5rem;">I'm usually quiet, don't think too much about it!</p>
                <p class="text-white text-sm" style="margin-bottom: 0.5rem;">
                 <i class="fas fa-clock" style="font-size: 0.75rem;"></i>
-                <span style="margin-left: 4px;">Pacific Time Zone : <span id="pacific-time">00:00</span></span>
+                <span style="margin-left: 4px;">Pacific Time Zone</span>
                </p>
                <p class="text-white text-sm">
                   <i class="fas fa-map-pin" style="font-size: 0.75rem;"></i>
@@ -656,25 +656,8 @@
          
          document.querySelectorAll('img').forEach(img => {
          img.setAttribute('draggable', 'false');
-         });
+         }); 
 
-         function updatePacificTime() {
-            const now = new Date();
-            // Format as HH:mm (24-hour) in Pacific Time
-            const options = {
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false,
-                timeZone: 'America/Los_Angeles'
-            };
-            const pacificTime = new Intl.DateTimeFormat('en-US', options).format(now);
-            document.getElementById('pacific-time').textContent = pacificTime;
-        }
-
-            // Update every second
-            setInterval(updatePacificTime, 1000);
-            updatePacificTime();
-         
          function createSparkle(container) {
             const sparkle = document.createElement('div');
             sparkle.className = 'sparkle';
